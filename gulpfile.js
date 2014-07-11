@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 var onError = function (err){
-    console.log('An Error occured: ' + err);
+console.log('An Error occured: ' + err);
 }
 
 
