@@ -5,49 +5,82 @@ body {
   color: #000;
 }
 
-/* line 5, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar {
+/* line 12, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  *zoom: 1;
+  background: #999;
+  padding: 2px 8px;
   font-family: 'Ubuntu', sans-serif;
 }
-/* line 8, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar .month {
+/* line 21, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar .month {
   float: right;
 }
-/* line 12, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar .year {
+/* line 28, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar .year {
   float: left;
 }
-/* line 14, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar .year .prev {
-  padding: 0 2px;
-}
-/* line 19, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar .month {
+/* line 34, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar .month {
   float: right;
 }
-/* line 21, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar .month .prev {
+/* line 36, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar .month .prev {
   padding: 0 2px;
 }
-/* line 27, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar a {
+/* line 41, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar a {
   color: #000;
   text-decoration: none;
 }
-/* line 31, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar i {
+/* line 46, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar i {
+  text-align: center;
+  width: 15px;
   font-size: 1.2rem;
 }
-/* line 35, ../../components/dm-ecal/sass/_layout.scss */
-.layout .month-year-bar span {
+/* line 52, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .month-year-bar span {
   font-size: 1rem;
   font-weight: 300;
 }
-/* line 11, ../../components/dm-ecal/sass/_mixins.scss */
-.layout .month-year-bar span:before {
+/* line 13, ../../components/dm-ecal/sass/_mixins.scss */
+.event-calendar-layout .month-year-bar span:before {
   content: '';
   display: inline-block;
   vertical-align: middle;
   height: 100%;
   width: .1px;
+}
+/* line 61, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .dates-bar {
+  position: relative;
+  background: #999;
+}
+/* line 65, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .dates-bar a {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 67, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .dates-bar a.prev {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 20px;
+  border-left: 1px solid #e7e7e7;
+}
+/* line 76, ../../components/dm-ecal/sass/_layout.scss */
+.event-calendar-layout .dates-bar a.next {
+  position: absolute;
+  text-align: center;
+  right: 0;
+  display: inline-block;
+  border-right: 1px solid #e7e7e7;
+  width: 20px;
 }

@@ -1,42 +1,88 @@
-@import 'compass';
+@import "compass/css3";
+@import "compass/utilities/general";
 @import 'susy';
+@import "compass/css3/box-sizing";
 
-.layout {
+
+
+.event-calendar-layout {
+   $base-padding:2px 8px;
+   $next-prev-baseWidth:20px;
+
     .month-year-bar {
+        @include box-sizing(border-box);
+        @include clearfix;
+        background:#999;
+        padding: $base-padding;
+
         $header-font-size:1;
         font-family:'Ubuntu', sans-serif;
+    
         .month {
             float:right;
-        }
+            .prev {
+                
+            }
+         }
 
         .year {
             float:left;
             .prev {
-                padding:0 2px;
-            }
+             }
         }
 
         .month {
             float:right;
             .prev {
                 padding:0 2px;
-            }
-
+             }
         }
 
         a {
             color:#000;
             text-decoration:none;
-        }
-        i {
-            font-size:$header-font-size + .2  + rem;
-        }
+         }
 
-        span {
+        i {
+            text-align:center;
+            width:$next-prev-baseWidth - 5;
+            font-size:$header-font-size + .2  + rem;
+         }
+
+         span {
             @include ghostVerticalAlign;
             font-size:$header-font-size + rem;
             font-weight:300;
         }
 
     } // month-year-bar
+
+
+    .dates-bar { 
+       position:relative;
+       background:#999;
+        
+        a {
+           @include box-sizing(border-box);
+            &.prev {
+                text-align:center;
+                position:absolute;
+                left:0;
+                width: $next-prev-baseWidth;
+                border-left:1px solid #e7e7e7;
+              
+            } // prev
+
+            &.next {
+                position:absolute;
+                text-align:center;
+                right:0;
+                display:inline-block;
+                border-right:1px solid #e7e7e7;
+                width: $next-prev-baseWidth;
+            } // next
+
+        }
+    } // dates-bar
+
 } // .layout

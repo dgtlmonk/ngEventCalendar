@@ -40,7 +40,7 @@ gulp.task('compass', function(){
 gulp.task('watch', function(){
     lr.listen();
     gulp.watch(paths.sass_src,['compass']);
-    gulp.watch([paths.sass_src,'./app/index.html']).on('change',lr.changed);
+    gulp.watch(['./app/css/evcal.css','./app/index.html']).on('change',lr.changed);
 })
 
 gulp.task('default',['compass','watch','connect']);
