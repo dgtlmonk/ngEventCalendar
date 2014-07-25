@@ -1,0 +1,20 @@
+{
+  "name": "ngEventCalendar",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dgtlmonk/ngEventCalendar",
+  "authors": [
+    "Joel Pablo <joel.pablo@digitalmonkstudio.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20"
+  }
+}
