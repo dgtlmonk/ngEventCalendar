@@ -2,6 +2,9 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     lr = require('gulp-livereload'),
     compass = require('gulp-compass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    coffee = require('gulp-coffee'),
+    concat = require('gulp-concat'),
     plumber = require('gulp-plumber');
 
 
@@ -12,7 +15,7 @@ console.log('An Error occured: ' + err);
 
 var paths = {
     sass_src:['./components/dm-ecal/sass/*.scss'],
-
+    js_dest:'./app/js/'
 }
 
 gulp.task('connect', function(){
@@ -36,6 +39,16 @@ gulp.task('compass', function(){
            .pipe(gulp.dest('./app/css'))
 })
 
+gulp.task('coffee', function(){
+    return gulp.src(['./components/coffee/modules/digitalmonkstudio/event-calendar/*.coffee','./components/coffee/modules/digitalmonkstudio/event-calendar/**/*.coffee'])
+        .pipe(sourcemaps.init())
+        .pipe(concat('dm.mod.eventcalendar.coffee'))
+        .pipe(gulp.dest('./components/coffee/modules/digitalmonkstudio/'))
+        .pipe(coffee({bare:true, sourceMaps:true}))
+        .pipe(sourcemaps.write({ addComment: false } ))
+        .pipe(gulp.dest(paths.js_dest));
+
+})
 
 gulp.task('watch', function(){
     lr.listen();
